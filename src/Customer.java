@@ -1,5 +1,6 @@
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import java.lang.String;
 
 @Entity
@@ -10,6 +11,11 @@ public class Customer {
     private String address;
     private double salary;
     private String dob;
+
+    /*=========================*/
+    @OneToOne(mappedBy = "customer")
+    private Vehicle vehicle;
+    /*=========================*/
 
     public Customer() {
     }
