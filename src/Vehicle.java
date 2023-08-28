@@ -9,8 +9,7 @@ public class Vehicle {
 
     /*======================*/
     @OneToOne
-    @Column(unique = true)
-    @JoinColumn(name = "customer")
+    @JoinColumn(name = "customer", unique = true)
     private Customer customer;
     /*======================*/
 
