@@ -1,4 +1,6 @@
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 public class Orders {
@@ -11,6 +13,15 @@ public class Orders {
     /*=============*/
     @ManyToOne
     private Customer customer;
+
+    @ManyToMany
+    @JoinTable(
+            name = "order_detail",
+            joinColumns = @JoinColumn(name = "orderId"),
+            inverseJoinColumns = @JoinColumn(name = "code")
+    )
+    private Set<Item> items =new HashSet<>();
+
     /*=============*/
 
 
